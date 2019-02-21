@@ -1,4 +1,58 @@
-.chatBox{
-  background: #ccc;
+html{
+  height: 100%;
+  background: #332f21; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #332f21 0%, #594a25 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #332f21 0%,#594a25 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #332f21 0%,#594a25 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#332f21', endColorstr='#594a25',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+header{
+  text-align: center;
+  color: #FFD700;
   font-family: "Courier New", Courier, monospace;
+}
+
+.chat{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatBox{
+  background: #736635; /* Old browsers */
+  background: -moz-linear-gradient(top, #736635 0%, #715c2a 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #736635 0%,#715c2a 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #736635 0%,#715c2a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#736635', endColorstr='#715c2a',GradientType=0 ); /* IE6-9 */
+  font-family: "Courier New", Courier, monospace;
+  padding: 25px;
+  font-size: 36px;
+  color: #D6D2C4;
+  border: 5px solid #332F21; 
+  outline: 5px solid #715C2A;
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.35);
+}
+
+.chatInput{
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.chatInput input{
+  width: 1px;
+  padding: 0 25px; 
+  border: none;
+  border-bottom: 2px solid #FFD700;
+  background: none;
+  font-size: 36px;
+}
+
+.chatInput input:focus{
+  outline: none;
+  caret-color: #D7BB77;
 }

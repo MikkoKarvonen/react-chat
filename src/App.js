@@ -15,7 +15,7 @@ class App extends Component {
   handleChange(event) {
     let charToAdd = event.target.value;
     if (charToAdd === ' ') charToAdd = '_';
-    let temp = this.state.chatText + charToAdd;
+    let temp = this.state.chatText + charToAdd.toLowerCase();
     if (temp.length >= 100){
       temp = temp.substr(1);
       this.setState({chatText: temp});
@@ -26,8 +26,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Chat text={this.state.chatText}/>
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <header>
+          <h1>react-chat</h1>
+        </header>
+        <div className="chat">
+          <Chat text={this.state.chatText}/>
+          <div className="chatInput">
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </div>
+        </div>
       </div>
     );
   }
