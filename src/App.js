@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Chat from './components/Chat.js';
 import './App.css';
 
 class App extends Component {
@@ -6,14 +7,16 @@ class App extends Component {
     super(props);
     this.state = {
       value: '',
-      chatText: [...Array(200)].map(i=>(~~(Math.random()*36)).toString(36)).join('')
+      chatText: [...Array(100)].map(i=>(~~(Math.random()*36)).toString(36)).join('')
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    let temp = this.state.chatText + event.target.value
-    if (temp.length >= 200){
+    let charToAdd = event.target.value;
+    if (charToAdd === ' ') charToAdd = '_';
+    let temp = this.state.chatText + charToAdd;
+    if (temp.length >= 100){
       temp = temp.substr(1);
       this.setState({chatText: temp});
     }
@@ -23,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="chatBox">{this.state.chatText}</div>
+        <Chat text={this.state.chatText}/>
         <input type="text" value={this.state.value} onChange={this.handleChange} />
       </div>
     );
