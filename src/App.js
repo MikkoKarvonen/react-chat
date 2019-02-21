@@ -17,7 +17,9 @@ class App extends Component {
     if (charToAdd === ' ') charToAdd = '_';
     let temp = this.state.chatText + charToAdd.toLowerCase();
     if (temp.length >= 100){
-      temp = temp.substr(1);
+      while (temp.length > 100){
+        temp = temp.substr(1);
+      }
       this.setState({chatText: temp});
     }
     this.setState({value: ''});
